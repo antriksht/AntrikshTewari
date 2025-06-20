@@ -21,26 +21,37 @@ export default function Hero() {
     <section className="min-h-screen gradient-bg flex items-center justify-center relative overflow-hidden pt-20">
       {/* Animated particles background */}
       <div className="absolute inset-0">
-        {[...Array(11)].map((_, i) => (
-          <motion.div
-            key={i}
-            className="particle"
-            style={{
-              top: `${15 + (i * 8)}%`,
-              left: `${8 + (i * 8)}%`,
-              opacity: 0.6 - (i * 0.05),
-            }}
-            animate={{
-              y: [-10, 10, -10],
-              x: [-5, 5, -5],
-            }}
-            transition={{
-              duration: 4 + (i * 0.3),
-              repeat: Infinity,
-              delay: i * 0.3,
-            }}
-          />
-        ))}
+        {[...Array(11)].map((_, i) => {
+          const randomTop = Math.random() * 80 + 10; // 10% to 90%
+          const randomLeft = Math.random() * 80 + 10; // 10% to 90%
+          const randomOpacity = Math.random() * 0.4 + 0.2; // 0.2 to 0.6
+          const randomDuration = Math.random() * 3 + 2; // 2s to 5s
+          const randomDelay = Math.random() * 2; // 0s to 2s
+          const randomYMovement = Math.random() * 20 + 5; // 5px to 25px
+          const randomXMovement = Math.random() * 10 + 2; // 2px to 12px
+          
+          return (
+            <motion.div
+              key={i}
+              className="particle"
+              style={{
+                top: `${randomTop}%`,
+                left: `${randomLeft}%`,
+                opacity: randomOpacity,
+              }}
+              animate={{
+                y: [-randomYMovement, randomYMovement, -randomYMovement],
+                x: [-randomXMovement, randomXMovement, -randomXMovement],
+              }}
+              transition={{
+                duration: randomDuration,
+                repeat: Infinity,
+                delay: randomDelay,
+                ease: "easeInOut",
+              }}
+            />
+          );
+        })}
       </div>
       
       <div className="container mx-auto px-4 text-center relative z-10">
