@@ -1,0 +1,78 @@
+import { motion } from "framer-motion";
+import { useInView } from "framer-motion";
+import { useRef } from "react";
+import { techStack } from "@/data/techStack";
+import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
+
+export default function TechStack() {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
+
+  return (
+    <section id="tech-stack" className="py-20 bg-card" ref={ref}>
+      <div className="container mx-auto px-4">
+        <div className="text-center mb-16">
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6 }}
+            className="text-4xl md:text-5xl font-bold mb-6"
+          >
+            Tech <span className="text-primary">Stack</span>
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="text-xl text-muted-foreground max-w-3xl mx-auto"
+          >
+            Comprehensive toolkit spanning analytics, marketing automation, programming, and AI/ML technologies.
+          </motion.p>
+        </div>
+        
+        {/* Tech Categories */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {techStack.map((category, categoryIndex) => (
+            <motion.div
+              key={category.name}
+              initial={{ opacity: 0, y: 20 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.6, delay: 0.3 + categoryIndex * 0.1 }}
+              className="bg-background border border-border rounded-xl p-6"
+            >
+              <div className="flex items-center mb-6">
+                <div className={`p-3 rounded-lg mr-4 ${category.color}`}>
+                  <category.icon className="w-8 h-8" />
+                </div>
+                <h3 className="text-xl font-bold">{category.name}</h3>
+              </div>
+              
+              <div className="grid grid-cols-2 gap-4">
+                {category.tools.map((tool, toolIndex) => (
+                  <motion.div
+                    key={tool.name}
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    animate={isInView ? { opacity: 1, scale: 1 } : {}}
+                    transition={{ duration: 0.4, delay: 0.5 + categoryIndex * 0.1 + toolIndex * 0.05 }}
+                  >
+                    <Tooltip>
+                      <TooltipTrigger asChild>
+                        <div className="tech-icon bg-muted hover:bg-muted/80 p-3 rounded-lg text-center cursor-pointer transition-all">
+                          <div className="text-2xl mb-2">{tool.icon}</div>
+                          <div className="text-sm font-medium">{tool.name}</div>
+                        </div>
+                      </TooltipTrigger>
+                      <TooltipContent>
+                        <p>{tool.description}</p>
+                      </TooltipContent>
+                    </Tooltip>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
