@@ -1,0 +1,107 @@
+# 🔥 Project Brief: Bolt.new – Personal Portfolio Website for Antriksh Tewari
+
+## 🎯 Objective
+Create a tall, animated, single-page personal portfolio website with deep-linked project pages to showcase the profile, work, and impact of Antriksh Tewari – a 10+ year digital marketing and analytics leader with a hybrid skillset of CRO, LLM-driven automation, SEO, paid media, and full-funnel strategy.
+
+---
+
+## 🧭 Site Structure & Routing
+
+- `/` – Home (one-pager with all anchor-linked sections)
+- `/projects/[project-name]` – Dedicated route-based pages per project with in-depth write-up
+- Add **scroll-to-top** button visible on scroll
+- Add **WhatsApp contact icon** as sticky bottom-right (opens WhatsApp chat)
+
+---
+
+## 🧱 Page Sections (Main Landing Page)
+
+### 1. 🏁 Hero Section
+- **Headline:** “Marketing Meets Machine Learning”
+- **Subhead:** “Growth Architect | CRO Strategist | Analytics Leader”
+- **CTA:** Button to scroll to Projects
+- **Background:** Light animated particles or visual metric movement
+
+---
+
+### 2. 👤 About Me
+- Career timeline with animated markers
+- Brief about strategy, leadership, product-building mindset
+- Animated counters: `10+ Years`, `20+ Brands`, `140%+ Uplift`
+- Logos of brands served (Pfizer, Mamaearth, Kama Ayurveda, etc.)
+
+---
+
+### 3. 🧠 Projects
+- Interactive grid layout
+- Filters/tags: SEO, PPC, Automation, Dashboards, ML, CRO
+- Each project opens via `/projects/[slug]` page (animated routing)
+- Project modal preview on hover/preview click
+- Data points: Goal, Solution, Result, Stack used
+
+---
+
+### 4. 🧰 Tech Stack
+- Categorized:  
+  - **Analytics**: GA4, BigQuery, Looker Studio  
+  - **Marketing**: Google Ads, Meta Ads, LinkedIn  
+  - **Automation**: GTM, App Script, Segment  
+  - **Programming**: R, Python, SQL  
+  - **AI/ML**: LLMs, Deep Learning, Forecasting  
+- Use icons with hover description tooltips
+
+---
+
+### 5. 🏆 Impact & Achievements
+- Data-driven highlights (animated):
+  - `+23% ROI – Mamaearth`
+  - `+140% Brand Growth – Kapiva`
+  - `-18% Decision Latency – Americana`
+  - `+9.45% Bottom Line – Pfizer`
+- Visual charts or stat tiles with animations
+
+---
+
+### 6. 📫 Contact
+- Clean contact form
+- Links:
+  - **📄 Download CV**
+  - **🔗 LinkedIn**
+  - **📧 Email**
+  - **📞 WhatsApp Icon** (always sticky, bottom right)
+
+---
+
+## 🎨 Design & UX
+
+- **Theme:** Monochrome with deep accent (blue/crimson)
+- **Typography:** Modern sans-serif, high contrast
+- **Animation:** Use Framer Motion or GSAP
+- **Dark Mode Default**
+- **Sticky Header** with:
+  - Anchors: About | Projects | Tech Stack | Contact
+  - Download CV
+  - LinkedIn Icon
+
+---
+
+## 🛠 Technical Requirements
+
+- **Framework:** React + Vite
+- **Styling:** TailwindCSS
+- **Animation:** Framer Motion or GSAP
+- **Routing:** React Router (for project sub-pages)
+- **Hosting:** Vercel or Netlify
+- **Form Handling:** Formspree or Firebase Functions
+- **SEO:** Meta tags, Open Graph, Twitter Cards
+- **Schema Markup:** Resume JSON-LD
+
+---
+
+## 📈 Performance Targets
+
+- Mobile PageSpeed Score: 90+
+- Fully responsive layout
+- Lazy load images & animations
+- Minimal initial load for core assets
+
