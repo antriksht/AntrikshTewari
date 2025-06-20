@@ -21,21 +21,23 @@ export default function Hero() {
     <section className="min-h-screen gradient-bg flex items-center justify-center relative overflow-hidden pt-20">
       {/* Animated particles background */}
       <div className="absolute inset-0">
-        {[...Array(5)].map((_, i) => (
+        {[...Array(11)].map((_, i) => (
           <motion.div
             key={i}
             className="particle"
             style={{
-              top: `${20 + i * 20}%`,
-              left: `${10 + i * 15}%`,
+              top: `${15 + (i * 8)}%`,
+              left: `${8 + (i * 8)}%`,
+              opacity: 0.6 - (i * 0.05),
             }}
             animate={{
               y: [-10, 10, -10],
+              x: [-5, 5, -5],
             }}
             transition={{
-              duration: 3,
+              duration: 4 + (i * 0.3),
               repeat: Infinity,
-              delay: i * 0.5,
+              delay: i * 0.3,
             }}
           />
         ))}
@@ -48,8 +50,8 @@ export default function Hero() {
           transition={{ duration: 0.6 }}
         >
           <h1 className="text-5xl md:text-7xl font-bold mb-6">
-            <span className="text-primary">Marketing</span> Meets<br />
-            <span className="text-destructive">Machine Learning</span>
+            <span className="text-primary">Strategic</span> Marketing<br />
+            <span className="text-destructive">Leadership</span>
           </h1>
           
           <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto">
@@ -57,7 +59,7 @@ export default function Hero() {
           </p>
           
           <p className="text-lg text-muted-foreground mb-12 max-w-2xl mx-auto">
-            Transforming businesses through data-driven marketing strategies, advanced analytics, and AI-powered automation across 20+ brands with proven 140%+ growth impact.
+            Driving enterprise growth through data-driven marketing strategies, advanced analytics, and AI-powered automation across 20+ leading brands.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
@@ -70,7 +72,7 @@ export default function Hero() {
             <Button 
               variant="outline"
               onClick={() => scrollToSection('contact')}
-              className="px-8 py-4 text-lg font-semibold hover:bg-card transition-colors"
+              className="px-8 py-4 text-lg font-semibold border-primary/50 text-primary hover:bg-primary/10 transition-colors"
             >
               Get In Touch
             </Button>
