@@ -27,25 +27,25 @@
 }
 
 .dark {
-  --background: hsl(240, 10%, 3.9%);
-  --foreground: hsl(0, 0%, 98%);
-  --muted: hsl(240, 3.7%, 15.9%);
-  --muted-foreground: hsl(240, 5%, 64.9%);
-  --popover: hsl(240, 10%, 3.9%);
-  --popover-foreground: hsl(0, 0%, 98%);
-  --card: hsl(240, 10%, 3.9%);
-  --card-foreground: hsl(0, 0%, 98%);
-  --border: hsl(240, 3.7%, 15.9%);
-  --input: hsl(240, 3.7%, 15.9%);
-  --primary: hsl(207, 90%, 54%);
-  --primary-foreground: hsl(211, 100%, 99%);
-  --secondary: hsl(240, 3.7%, 15.9%);
-  --secondary-foreground: hsl(0, 0%, 98%);
-  --accent: hsl(240, 3.7%, 15.9%);
-  --accent-foreground: hsl(0, 0%, 98%);
-  --destructive: hsl(0, 62.8%, 30.6%);
-  --destructive-foreground: hsl(0, 0%, 98%);
-  --ring: hsl(240, 4.9%, 83.9%);
+  --background: hsl(220, 15%, 8%);
+  --foreground: hsl(220, 15%, 95%);
+  --muted: hsl(220, 15%, 15%);
+  --muted-foreground: hsl(220, 10%, 65%);
+  --popover: hsl(220, 15%, 10%);
+  --popover-foreground: hsl(220, 15%, 95%);
+  --card: hsl(220, 15%, 12%);
+  --card-foreground: hsl(220, 15%, 95%);
+  --border: hsl(220, 15%, 20%);
+  --input: hsl(220, 15%, 18%);
+  --primary: hsl(210, 85%, 60%);
+  --primary-foreground: hsl(220, 15%, 98%);
+  --secondary: hsl(220, 15%, 18%);
+  --secondary-foreground: hsl(220, 15%, 95%);
+  --accent: hsl(220, 15%, 20%);
+  --accent-foreground: hsl(220, 15%, 95%);
+  --destructive: hsl(0, 65%, 55%);
+  --destructive-foreground: hsl(220, 15%, 98%);
+  --ring: hsl(220, 10%, 75%);
   --radius: 0.5rem;
 }
 
@@ -66,28 +66,28 @@
 
 @layer components {
   .gradient-bg {
-    background: linear-gradient(135deg, hsl(240, 10%, 3.9%) 0%, hsl(240, 3.7%, 15.9%) 100%);
+    background: linear-gradient(135deg, hsl(220, 15%, 8%) 0%, hsl(220, 15%, 12%) 100%);
   }
   
   .glow-blue {
-    box-shadow: 0 0 20px hsla(207, 90%, 54%, 0.3);
+    box-shadow: 0 0 20px hsla(210, 85%, 60%, 0.3);
   }
   
   .glow-red {
-    box-shadow: 0 0 20px hsla(0, 84.2%, 60.2%, 0.3);
+    box-shadow: 0 0 20px hsla(0, 65%, 55%, 0.3);
   }
   
   .particle {
     position: absolute;
     width: 4px;
     height: 4px;
-    background: hsl(207, 90%, 54%);
+    background: hsl(210, 85%, 60%);
     border-radius: 50%;
     animation: float 3s ease-in-out infinite;
   }
   
   .timeline-line {
-    background: linear-gradient(to bottom, hsl(207, 90%, 54%), hsl(0, 84.2%, 60.2%));
+    background: linear-gradient(to bottom, hsl(210, 85%, 60%), hsl(0, 65%, 55%));
   }
   
   .project-card:hover {

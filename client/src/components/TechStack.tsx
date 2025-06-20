@@ -58,7 +58,9 @@ export default function TechStack() {
                     <Tooltip>
                       <TooltipTrigger asChild>
                         <div className="tech-icon bg-muted hover:bg-muted/80 p-3 rounded-lg text-center cursor-pointer transition-all">
-                          <div className="text-2xl mb-2">{tool.icon}</div>
+                          <div className="w-6 h-6 mx-auto mb-2 text-muted-foreground flex items-center justify-center">
+                            <tool.icon className="w-5 h-5" />
+                          </div>
                           <div className="text-sm font-medium">{tool.name}</div>
                         </div>
                       </TooltipTrigger>

@@ -1,72 +1,56 @@
-%PDF-1.4
-1 0 obj
-<<
-/Type /Catalog
-/Pages 2 0 R
->>
-endobj
-2 0 obj
-<<
-/Type /Pages
-/Kids [3 0 R]
-/Count 1
->>
-endobj
-3 0 obj
-<<
-/Type /Page
-/Parent 2 0 R
-/MediaBox [0 0 612 792]
-/Resources <<
-/Font <<
-/F1 4 0 R
->>
->>
-/Contents 5 0 R
->>
-endobj
-4 0 obj
-<<
-/Type /Font
-/Subtype /Type1
-/BaseFont /Helvetica
->>
-endobj
-5 0 obj
-<<
-/Length 200
->>
-stream
-BT
-/F1 12 Tf
-50 700 Td
-(Antriksh Tewari - Professional Resume) Tj
-0 -20 Td
-(Head of Digital Marketing & Analytics) Tj
-0 -20 Td
-(Email: antriksh.tewari89@gmail.com) Tj
-0 -20 Td
-(Phone: +91 9999446188) Tj
-0 -20 Td
-(LinkedIn: linkedin.com/in/antrikshtewari) Tj
-0 -40 Td
-(This is a sample CV file for download demonstration.) Tj
-ET
-endstream
-endobj
-xref
-0 6
-0000000000 65535 f 
-0000000009 00000 n 
-0000000058 00000 n 
-0000000115 00000 n 
-0000000274 00000 n 
-0000000341 00000 n 
-trailer
-<<
-/Size 6
-/Root 1 0 R
->>
-startxref
-592
-%%EOF
+ANTRIKSH TEWARI
+Head of Digital Marketing & Analytics
+
+Contact Information:
+Email: antriksh.tewari89@gmail.com
+Phone: +91 9999446188
+LinkedIn: linkedin.com/in/antrikshtewari
+Location: Noida, India
+
+PROFESSIONAL SUMMARY
+Marketing and analytics professional with 10+ years of experience delivering data-driven growth and digital transformation across industries. Head of Digital Marketing and Analytics at Intelegencia, driving full-funnel growth across performance, SEO, UX, creatives, and analytics. Builder of scalable marketing and analytics solutions, combining strategic insight with operational excellence.
+
+EXPERIENCE
+
+Head of Digital Marketing | Intelegencia | Apr 2025 – Present
+• Leading Paid Media, SEO, Creatives, Landing Page Optimization, and Revenue Enablement across B2B and B2C verticals
+• Spearheading full-funnel digital strategy combining analytics, CRO, and ad performance
+• Overseeing dashboards and GA4 pipelines across 20+ accounts
+• Developed AI-powered automation for digital marketing campaigns
+• Implemented customer segmentation and personalization for Google Ads
+• Collaborated with data science teams to integrate ML models into analytics frameworks
+
+AVP - Analytics | Unyscape Infocom | Feb 2020 – Mar 2024
+• Drove predictive analytics and business intelligence transformation
+• Led automation tools and developed lead scoring and forecasting models
+• Developed deep learning models for customer engagement insights
+• Managed analytics sales outreach and independently closed 20+ projects
+• Authored industry research reports and drove vertical P&L growth
+• Enabled 8% YOY bottom-line impact for a US FMCG client via visibility frameworks
+
+Co-Founder and CMO | ZichBuy Pvt Ltd | May 2015 – Feb 2020
+• Built a B2B e-commerce platform and scaled acquisition through SEO and paid ads
+• Automated inventory, CRM, and campaign workflows
+• Led website and conversion optimization initiatives
+• Directed full-stack analytics implementation to guide marketing and business ops
+• Maintained stakeholder relationships and ensured exceptional service experience
+
+KEY ACHIEVEMENTS
+• Pfizer: Improved demand forecasting and field force performance, enabling 9.45% YOY bottom-line growth
+• Mamaearth: Implemented keyword-level ROI analysis, boosting budget efficiency by 23%
+• Kapiva: Built brand analytics and influencer measurement, contributing to 140% growth
+• Americana Group: Automated brand and geo-level reporting, reducing decision latency by 18%
+• Kama Ayurveda: Delivered record eCommerce conversions with 16% market share gain
+
+EDUCATION
+Masters in Business and Management | University of Strathclyde, Glasgow, UK | Sep 2014 – Sep 2015
+PGP in Predictive Analytics | Northwestern University, Illinois, US | Dec 2018 – Sep 2019
+
+TECHNICAL SKILLS
+Data Analytics: Google Analytics 4, BigQuery, Looker Studio, SQL, Power BI
+Digital Marketing: Google Ads, Facebook Ads, LinkedIn Ads, Amazon Ads, Reddit Ads, Twitter Ads
+Automation & Tracking: Google Tag Manager, Google App Script, AWS Lambda, Alteryx, Segment, VWO, Clarity, Hotjar
+CRM & Business Tools: Salesforce, HubSpot, Microsoft Excel/Sheets
+Programming: Python, R, JavaScript
+Forecasting & AI: Time Series Forecasting, Large Language Models, ML Modeling, Sentiment Analysis
+
