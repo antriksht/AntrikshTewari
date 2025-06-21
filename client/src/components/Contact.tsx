@@ -52,19 +52,21 @@ export default function Contact() {
         {[...Array(6)].map((_, i) => {
           const randomTop = Math.random() * 80 + 10;
           const randomLeft = Math.random() * 80 + 10;
-          const randomSize = Math.random() * 3 + 1;
-          const randomDuration = Math.random() * 3 + 3;
-          const randomDelay = Math.random() * 3;
+          const randomSize = Math.random() * 3 + 2; // 2px to 5px
+          const randomDuration = Math.random() * 4 + 2; // 2s to 6s
+          const randomDelay = Math.random() * 5; // 0s to 5s
+          const randomOpacity = Math.random() * 0.3 + 0.6; // 0.6 to 0.9
           
           return (
             <div
-              key={i}
+              key={`contact-particle-${i}`}
               className="section-particle"
               style={{
                 top: `${randomTop}%`,
                 left: `${randomLeft}%`,
                 width: `${randomSize}px`,
                 height: `${randomSize}px`,
+                opacity: randomOpacity,
                 animationDuration: `${randomDuration}s`,
                 animationDelay: `${randomDelay}s`,
               }}
@@ -118,7 +120,7 @@ export default function Contact() {
                     initial={{ opacity: 0, x: -20 }}
                     animate={isInView ? { opacity: 1, x: 0 } : {}}
                     transition={{ duration: 0.6, delay: 0.4 + index * 0.1 }}
-                    className="flex items-center space-x-4 p-4 bg-background rounded-lg hover:bg-muted transition-colors group"
+                    className="flex items-center space-x-4 p-4 bg-card/95 backdrop-blur-sm rounded-lg hover:bg-muted/95 transition-colors group border border-border/40"
                   >
                     <div className={`p-3 rounded-lg transition-colors ${method.color}`}>
                       <method.icon className="w-6 h-6" />
@@ -135,7 +137,7 @@ export default function Contact() {
                 initial={{ opacity: 0, x: -20 }}
                 animate={isInView ? { opacity: 1, x: 0 } : {}}
                 transition={{ duration: 0.6, delay: 0.7 }}
-                className="flex items-center space-x-4 p-4 bg-background rounded-lg"
+                className="flex items-center space-x-4 p-4 bg-card/95 backdrop-blur-sm rounded-lg border border-border/40"
               >
                 <div className="bg-muted p-3 rounded-lg">
                   <MapPin className="w-6 h-6 text-muted-foreground" />
@@ -185,7 +187,7 @@ export default function Contact() {
                   initial={{ opacity: 0, x: 20 }}
                   animate={isInView ? { opacity: 1, x: 0 } : {}}
                   transition={{ duration: 0.6, delay: 0.5 }}
-                  className="flex items-center justify-between p-6 bg-background rounded-lg hover:bg-muted transition-colors group"
+                  className="flex items-center justify-between p-6 bg-card/95 backdrop-blur-sm rounded-lg hover:bg-muted/95 transition-colors group border border-border/40"
                 >
                   <div className="flex items-center space-x-4">
                     <Linkedin className="w-8 h-8 text-primary" />

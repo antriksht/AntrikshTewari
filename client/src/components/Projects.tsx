@@ -40,14 +40,14 @@ export default function Projects() {
         {[...Array(9)].map((_, i) => {
           const randomTop = Math.random() * 80 + 10;
           const randomLeft = Math.random() * 80 + 10;
-          const randomSize = Math.random() * 3 + 2;
-          const randomDuration = Math.random() * 3 + 3;
-          const randomDelay = Math.random() * 5;
-          const randomOpacity = Math.random() * 0.3 + 0.5; // 0.5 to 0.8
+          const randomSize = Math.random() * 3 + 2; // 2px to 5px
+          const randomDuration = Math.random() * 5 + 4; // 4s to 9s
+          const randomDelay = Math.random() * 9; // 0s to 9s
+          const randomOpacity = Math.random() * 0.3 + 0.6; // 0.6 to 0.9
           
           return (
             <div
-              key={i}
+              key={`projects-particle-${i}`}
               className="section-particle"
               style={{
                 top: `${randomTop}%`,

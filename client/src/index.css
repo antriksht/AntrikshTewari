@@ -90,8 +90,8 @@
   }
   
   .glass-card {
-    background: hsla(220, 12%, 18%, 0.7);
-    backdrop-filter: blur(8px);
+    background: hsla(220, 12%, 18%, 0.95);
+    backdrop-filter: blur(12px);
     border: 1px solid hsla(220, 15%, 25%, 0.4);
     box-shadow: 
       0 4px 16px hsla(0, 0%, 0%, 0.1),

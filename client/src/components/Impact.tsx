@@ -85,19 +85,21 @@ export default function Impact() {
         {[...Array(8)].map((_, i) => {
           const randomTop = Math.random() * 80 + 10;
           const randomLeft = Math.random() * 80 + 10;
-          const randomSize = Math.random() * 3 + 1;
-          const randomDuration = Math.random() * 3 + 3;
-          const randomDelay = Math.random() * 4;
+          const randomSize = Math.random() * 3 + 2; // 2px to 5px
+          const randomDuration = Math.random() * 5 + 3; // 3s to 8s
+          const randomDelay = Math.random() * 8; // 0s to 8s
+          const randomOpacity = Math.random() * 0.3 + 0.6; // 0.6 to 0.9
           
           return (
             <div
-              key={i}
+              key={`impact-particle-${i}`}
               className="section-particle"
               style={{
                 top: `${randomTop}%`,
                 left: `${randomLeft}%`,
                 width: `${randomSize}px`,
                 height: `${randomSize}px`,
+                opacity: randomOpacity,
                 animationDuration: `${randomDuration}s`,
                 animationDelay: `${randomDelay}s`,
               }}
@@ -133,7 +135,7 @@ export default function Impact() {
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.3 + index * 0.1 }}
-              className={`${achievement.color} rounded-xl p-6 text-center border`}
+              className={`${achievement.color} rounded-xl p-6 text-center border backdrop-blur-sm bg-card/95`}
             >
               <div className="text-4xl font-bold mb-2">
                 <AnimatedCounter 

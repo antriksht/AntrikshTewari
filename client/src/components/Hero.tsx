@@ -24,17 +24,16 @@ export default function Hero() {
         {[...Array(11)].map((_, i) => {
           const randomTop = Math.random() * 80 + 10; // 10% to 90%
           const randomLeft = Math.random() * 80 + 10; // 10% to 90%
-          const randomOpacity = Math.random() * 0.4 + 0.6; // 0.6 to 1.0
-          const randomDuration = Math.random() * 3 + 2; // 2s to 5s
-          const randomDelay = Math.random() * 2; // 0s to 2s
+          const randomOpacity = Math.random() * 0.3 + 0.6; // 0.6 to 0.9
+          const randomDuration = Math.random() * 6 + 3; // 3s to 9s
+          const randomDelay = Math.random() * 10; // 0s to 10s
           const randomYMovement = Math.random() * 20 + 5; // 5px to 25px
           const randomXMovement = Math.random() * 10 + 2; // 2px to 12px
-
           const randomSize = Math.random() * 3 + 2; // 2px to 5px
           
           return (
             <motion.div
-              key={i}
+              key={`hero-particle-${i}`}
               className="section-particle"
               style={{
                 top: `${randomTop}%`,

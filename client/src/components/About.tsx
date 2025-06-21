@@ -49,19 +49,21 @@ export default function About() {
         {[...Array(8)].map((_, i) => {
           const randomTop = Math.random() * 80 + 10;
           const randomLeft = Math.random() * 80 + 10;
-          const randomSize = Math.random() * 3 + 1; // 1px to 4px
-          const randomDuration = Math.random() * 3 + 3; // 3s to 6s
-          const randomDelay = Math.random() * 4;
+          const randomSize = Math.random() * 3 + 2; // 2px to 5px
+          const randomDuration = Math.random() * 4 + 3; // 3s to 7s
+          const randomDelay = Math.random() * 6; // 0s to 6s
+          const randomOpacity = Math.random() * 0.3 + 0.6; // 0.6 to 0.9
           
           return (
             <div
-              key={i}
+              key={`about-particle-${i}`}
               className="section-particle"
               style={{
                 top: `${randomTop}%`,
                 left: `${randomLeft}%`,
                 width: `${randomSize}px`,
                 height: `${randomSize}px`,
+                opacity: randomOpacity,
                 animationDuration: `${randomDuration}s`,
                 animationDelay: `${randomDelay}s`,
               }}

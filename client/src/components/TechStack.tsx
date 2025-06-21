@@ -21,19 +21,21 @@ export default function TechStack() {
         {[...Array(7)].map((_, i) => {
           const randomTop = Math.random() * 80 + 10;
           const randomLeft = Math.random() * 80 + 10;
-          const randomSize = Math.random() * 3 + 1;
-          const randomDuration = Math.random() * 3 + 3;
-          const randomDelay = Math.random() * 3;
+          const randomSize = Math.random() * 3 + 2; // 2px to 5px
+          const randomDuration = Math.random() * 4 + 4; // 4s to 8s
+          const randomDelay = Math.random() * 7; // 0s to 7s
+          const randomOpacity = Math.random() * 0.3 + 0.6; // 0.6 to 0.9
           
           return (
             <div
-              key={i}
+              key={`tech-particle-${i}`}
               className="section-particle"
               style={{
                 top: `${randomTop}%`,
                 left: `${randomLeft}%`,
                 width: `${randomSize}px`,
                 height: `${randomSize}px`,
+                opacity: randomOpacity,
                 animationDuration: `${randomDuration}s`,
                 animationDelay: `${randomDelay}s`,
               }}
@@ -88,7 +90,7 @@ export default function TechStack() {
                   >
                     <Tooltip>
                       <TooltipTrigger asChild>
-                        <div className="tech-icon bg-muted hover:bg-muted/80 p-3 rounded-lg text-center cursor-pointer transition-all">
+                        <div className="tech-icon bg-card/95 backdrop-blur-sm hover:bg-muted/95 p-3 rounded-lg text-center cursor-pointer transition-all border border-border/40">
                           <div className="w-6 h-6 mx-auto mb-2 text-muted-foreground flex items-center justify-center">
                             <tool.icon className="w-5 h-5" />
                           </div>
