@@ -141,7 +141,7 @@ export default function About() {
           
           <div className="relative">
             {/* Timeline line */}
-            <div className="absolute md:left-1/2 md:transform md:-translate-x-1/2 left-4 w-1 h-full timeline-line"></div>
+            <div className="absolute right-4 md:left-1/2 md:transform md:-translate-x-1/2 w-1 h-full timeline-line"></div>
             
             {/* Timeline items */}
             <div className="space-y-12">
@@ -155,9 +155,9 @@ export default function About() {
                 >
                   {item.side === 'left' ? (
                     <>
-                      <div className="md:w-5/12 w-full md:text-right md:pr-8 pr-0 mb-8 md:mb-0">
+                      <div className="md:w-5/12 w-full md:text-right md:pr-8 pr-8 mb-8 md:mb-0">
                         <div className="glass-card p-6 rounded-lg relative">
-                          <div className={`absolute top-6 md:-right-3 -left-3 w-6 h-6 ${item.color === 'blue' ? 'bg-primary' : 'bg-destructive'} rounded-full border-4 border-background`}></div>
+                          <div className={`absolute top-6 md:-right-3 right-4 w-6 h-6 ${item.color === 'blue' ? 'bg-primary' : 'bg-destructive'} rounded-full border-4 border-background`}></div>
                           <h4 className={`font-bold text-lg ${item.color === 'blue' ? 'text-primary' : 'text-destructive'}`}>
                             {item.title}
                           </h4>
@@ -173,9 +173,9 @@ export default function About() {
                     <>
                       <div className="hidden md:block md:w-5/12"></div>
                       <div className="hidden md:block md:w-2/12"></div>
-                      <div className="md:w-5/12 w-full md:pl-8 pl-0">
+                      <div className="md:w-5/12 w-full md:pl-8 pr-8">
                         <div className="glass-card p-6 rounded-lg relative">
-                          <div className={`absolute top-6 md:-left-3 -left-3 w-6 h-6 ${item.color === 'blue' ? 'bg-primary' : 'bg-destructive'} rounded-full border-4 border-background`}></div>
+                          <div className={`absolute top-6 md:-left-3 right-4 w-6 h-6 ${item.color === 'blue' ? 'bg-primary' : 'bg-destructive'} rounded-full border-4 border-background`}></div>
                           <h4 className={`font-bold text-lg ${item.color === 'blue' ? 'text-primary' : 'text-destructive'}`}>
                             {item.title}
                           </h4>
