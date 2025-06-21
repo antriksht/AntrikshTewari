@@ -44,6 +44,31 @@ export default function About() {
         <div className="floating-orb w-24 h-24 top-1/3 right-20" style={{ animationDelay: '2s' }}></div>
         <div className="floating-orb w-40 h-40 bottom-20 left-1/4" style={{ animationDelay: '4s' }}></div>
       </div>
+      {/* Animated particles */}
+      <div className="absolute inset-0">
+        {[...Array(8)].map((_, i) => {
+          const randomTop = Math.random() * 80 + 10;
+          const randomLeft = Math.random() * 80 + 10;
+          const randomSize = Math.random() * 3 + 1; // 1px to 4px
+          const randomDuration = Math.random() * 3 + 3; // 3s to 6s
+          const randomDelay = Math.random() * 4;
+          
+          return (
+            <div
+              key={i}
+              className="section-particle"
+              style={{
+                top: `${randomTop}%`,
+                left: `${randomLeft}%`,
+                width: `${randomSize}px`,
+                height: `${randomSize}px`,
+                animationDuration: `${randomDuration}s`,
+                animationDelay: `${randomDelay}s`,
+              }}
+            />
+          );
+        })}
+      </div>
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-16">
           <motion.h2

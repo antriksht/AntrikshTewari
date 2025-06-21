@@ -35,6 +35,31 @@ export default function Projects() {
         <div className="floating-orb w-36 h-36 bottom-1/3 left-16" style={{ animationDelay: '3s' }}></div>
         <div className="floating-orb w-20 h-20 top-10 left-1/3" style={{ animationDelay: '5s' }}></div>
       </div>
+      {/* Animated particles */}
+      <div className="absolute inset-0">
+        {[...Array(9)].map((_, i) => {
+          const randomTop = Math.random() * 80 + 10;
+          const randomLeft = Math.random() * 80 + 10;
+          const randomSize = Math.random() * 3 + 1;
+          const randomDuration = Math.random() * 3 + 3;
+          const randomDelay = Math.random() * 5;
+          
+          return (
+            <div
+              key={i}
+              className="section-particle"
+              style={{
+                top: `${randomTop}%`,
+                left: `${randomLeft}%`,
+                width: `${randomSize}px`,
+                height: `${randomSize}px`,
+                animationDuration: `${randomDuration}s`,
+                animationDelay: `${randomDelay}s`,
+              }}
+            />
+          );
+        })}
+      </div>
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <motion.h2

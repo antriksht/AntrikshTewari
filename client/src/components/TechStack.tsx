@@ -16,6 +16,31 @@ export default function TechStack() {
         <div className="floating-orb w-24 h-24 bottom-1/4 right-10" style={{ animationDelay: '4s' }}></div>
         <div className="floating-orb w-28 h-28 top-1/2 left-8" style={{ animationDelay: '6s' }}></div>
       </div>
+      {/* Animated particles */}
+      <div className="absolute inset-0">
+        {[...Array(7)].map((_, i) => {
+          const randomTop = Math.random() * 80 + 10;
+          const randomLeft = Math.random() * 80 + 10;
+          const randomSize = Math.random() * 3 + 1;
+          const randomDuration = Math.random() * 3 + 3;
+          const randomDelay = Math.random() * 3;
+          
+          return (
+            <div
+              key={i}
+              className="section-particle"
+              style={{
+                top: `${randomTop}%`,
+                left: `${randomLeft}%`,
+                width: `${randomSize}px`,
+                height: `${randomSize}px`,
+                animationDuration: `${randomDuration}s`,
+                animationDelay: `${randomDelay}s`,
+              }}
+            />
+          );
+        })}
+      </div>
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <motion.h2

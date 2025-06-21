@@ -118,11 +118,17 @@
   
   .particle {
     position: absolute;
-    width: 4px;
-    height: 4px;
     background: hsl(210, 85%, 60%);
     border-radius: 50%;
     animation: float 3s ease-in-out infinite;
+  }
+  
+  .section-particle {
+    position: absolute;
+    background: hsl(210, 85%, 60%);
+    border-radius: 50%;
+    opacity: 0.4;
+    animation: particleFloat 4s ease-in-out infinite;
   }
   
   .timeline-line {
@@ -190,6 +196,25 @@
   66% { 
     transform: translate(-15px, 10px) scale(0.9);
     opacity: 0.4;
+  }
+}
+
+@keyframes particleFloat {
+  0%, 100% { 
+    transform: translateY(0px) scale(1);
+    opacity: 0.3;
+  }
+  25% { 
+    transform: translateY(-8px) scale(1.2);
+    opacity: 0.6;
+  }
+  50% { 
+    transform: translateY(5px) scale(0.8);
+    opacity: 0.4;
+  }
+  75% { 
+    transform: translateY(-3px) scale(1.1);
+    opacity: 0.5;
   }
 }
 
