@@ -57,7 +57,7 @@ export default function Header() {
               Contact
             </button>
             
-            <a href="/cv.pdf" download className="inline-flex">
+            <a href="/Antriksh Tewari - 10+ Years - Head of Marketing.pdf" download className="inline-flex">
               <Button className="glow-blue">
                 <Download className="mr-2 h-4 w-4" />
                 Download CV
@@ -111,7 +111,7 @@ export default function Header() {
               >
                 Contact
               </button>
-              <a href="/cv.pdf" download className="inline-flex w-fit">
+              <a href="/Antriksh Tewari - 10+ Years - Head of Marketing.pdf" download className="inline-flex w-fit">
                 <Button className="glow-blue">
                   <Download className="mr-2 h-4 w-4" />
                   Download CV

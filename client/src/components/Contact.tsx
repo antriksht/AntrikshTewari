@@ -161,7 +161,7 @@ export default function Contact() {
               
               <div className="space-y-4">
                 <motion.a
-                  href="/cv.pdf"
+                  href="/Antriksh Tewari - 10+ Years - Head of Marketing.pdf"
                   download
                   initial={{ opacity: 0, x: 20 }}
                   animate={isInView ? { opacity: 1, x: 0 } : {}}
