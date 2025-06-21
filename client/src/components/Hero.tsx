@@ -67,10 +67,10 @@ export default function Hero() {
           <h1 className="text-5xl md:text-7xl font-bold mb-6">
             <span className="text-primary">Strategic</span> Marketing
             <br />
-            <span className="text-destructive">Leadership</span>
+            <span className="text-destructive">Meets</span>
           </h1>
 
-          <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto">
+          <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">
             Growth Architect | CRO Strategist | Analytics Leader
           </p>
 
