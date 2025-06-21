@@ -36,13 +36,14 @@ export default function Projects() {
         <div className="floating-orb w-20 h-20 top-10 left-1/3" style={{ animationDelay: '5s' }}></div>
       </div>
       {/* Animated particles */}
-      <div className="absolute inset-0">
+      <div className="absolute inset-0 z-10">
         {[...Array(9)].map((_, i) => {
           const randomTop = Math.random() * 80 + 10;
           const randomLeft = Math.random() * 80 + 10;
-          const randomSize = Math.random() * 3 + 1;
+          const randomSize = Math.random() * 3 + 2;
           const randomDuration = Math.random() * 3 + 3;
           const randomDelay = Math.random() * 5;
+          const randomOpacity = Math.random() * 0.3 + 0.5; // 0.5 to 0.8
           
           return (
             <div
@@ -53,6 +54,7 @@ export default function Projects() {
                 left: `${randomLeft}%`,
                 width: `${randomSize}px`,
                 height: `${randomSize}px`,
+                opacity: randomOpacity,
                 animationDuration: `${randomDuration}s`,
                 animationDelay: `${randomDelay}s`,
               }}
@@ -60,7 +62,7 @@ export default function Projects() {
           );
         })}
       </div>
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-4 relative z-20">
         <div className="text-center mb-16">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
