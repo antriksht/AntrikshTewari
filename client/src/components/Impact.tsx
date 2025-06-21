@@ -73,7 +73,13 @@ export default function Impact() {
   ];
 
   return (
-    <section id="impact" className="py-20 bg-background" ref={ref}>
+    <section id="impact" className="py-20 bg-background relative overflow-hidden" ref={ref}>
+      {/* Floating orbs background */}
+      <div className="absolute inset-0">
+        <div className="floating-orb w-40 h-40 top-20 left-12" style={{ animationDelay: '1.5s' }}></div>
+        <div className="floating-orb w-24 h-24 top-2/3 right-16" style={{ animationDelay: '3.5s' }}></div>
+        <div className="floating-orb w-32 h-32 bottom-10 right-1/3" style={{ animationDelay: '5.5s' }}></div>
+      </div>
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <motion.h2

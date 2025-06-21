@@ -37,8 +37,14 @@ export default function About() {
   const brands = ["Pfizer", "Mamaearth", "Kapiva", "Americana Group", "Kama Ayurveda"];
 
   return (
-    <section id="about" className="py-20 bg-card">
-      <div className="container mx-auto px-4">
+    <section id="about" className="py-20 bg-card relative overflow-hidden">
+      {/* Floating orbs background */}
+      <div className="absolute inset-0">
+        <div className="floating-orb w-32 h-32 top-10 left-10" style={{ animationDelay: '0s' }}></div>
+        <div className="floating-orb w-24 h-24 top-1/3 right-20" style={{ animationDelay: '2s' }}></div>
+        <div className="floating-orb w-40 h-40 bottom-20 left-1/4" style={{ animationDelay: '4s' }}></div>
+      </div>
+      <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-16">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
@@ -123,7 +129,7 @@ export default function About() {
                   {item.side === 'left' ? (
                     <>
                       <div className="w-5/12 text-right pr-8">
-                        <div className="bg-card border border-border p-6 rounded-lg relative">
+                        <div className="glass-card p-6 rounded-lg relative">
                           <div className={`absolute top-6 -right-3 w-6 h-6 ${item.color === 'blue' ? 'bg-primary' : 'bg-destructive'} rounded-full border-4 border-background`}></div>
                           <h4 className={`font-bold text-lg ${item.color === 'blue' ? 'text-primary' : 'text-destructive'}`}>
                             {item.title}
@@ -141,7 +147,7 @@ export default function About() {
                       <div className="w-5/12"></div>
                       <div className="w-2/12"></div>
                       <div className="w-5/12 pl-8">
-                        <div className="bg-card border border-border p-6 rounded-lg relative">
+                        <div className="glass-card p-6 rounded-lg relative">
                           <div className={`absolute top-6 -left-3 w-6 h-6 ${item.color === 'blue' ? 'bg-primary' : 'bg-destructive'} rounded-full border-4 border-background`}></div>
                           <h4 className={`font-bold text-lg ${item.color === 'blue' ? 'text-primary' : 'text-destructive'}`}>
                             {item.title}

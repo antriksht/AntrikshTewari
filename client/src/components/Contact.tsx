@@ -40,7 +40,13 @@ export default function Contact() {
   ];
 
   return (
-    <section id="contact" className="py-20 bg-card" ref={ref}>
+    <section id="contact" className="py-20 bg-card relative overflow-hidden" ref={ref}>
+      {/* Floating orbs background */}
+      <div className="absolute inset-0">
+        <div className="floating-orb w-36 h-36 top-1/4 left-10" style={{ animationDelay: '0.5s' }}></div>
+        <div className="floating-orb w-28 h-28 bottom-1/4 right-12" style={{ animationDelay: '2.5s' }}></div>
+        <div className="floating-orb w-20 h-20 top-16 right-1/3" style={{ animationDelay: '4.5s' }}></div>
+      </div>
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <motion.h2

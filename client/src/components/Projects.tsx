@@ -28,7 +28,13 @@ export default function Projects() {
     : projects.filter(project => project.tags.includes(activeFilter));
 
   return (
-    <section id="projects" className="py-20 bg-background" ref={ref}>
+    <section id="projects" className="py-20 bg-background relative overflow-hidden" ref={ref}>
+      {/* Floating orbs background */}
+      <div className="absolute inset-0">
+        <div className="floating-orb w-28 h-28 top-1/4 right-10" style={{ animationDelay: '1s' }}></div>
+        <div className="floating-orb w-36 h-36 bottom-1/3 left-16" style={{ animationDelay: '3s' }}></div>
+        <div className="floating-orb w-20 h-20 top-10 left-1/3" style={{ animationDelay: '5s' }}></div>
+      </div>
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <motion.h2
@@ -77,7 +83,7 @@ export default function Projects() {
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.6 + index * 0.1 }}
-              className="project-card bg-card border border-border rounded-xl p-6 hover:border-primary/50 transition-all duration-300 group"
+              className="project-card glass-card rounded-xl p-6 transition-all duration-300 group"
             >
               <div className="flex items-start justify-between mb-4">
                 <div className={`p-3 rounded-lg ${project.color === 'blue' ? 'bg-primary/10' : 'bg-destructive/10'}`}>

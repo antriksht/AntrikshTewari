@@ -9,7 +9,13 @@ export default function TechStack() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="tech-stack" className="py-20 bg-card" ref={ref}>
+    <section id="tech-stack" className="py-20 bg-card relative overflow-hidden" ref={ref}>
+      {/* Floating orbs background */}
+      <div className="absolute inset-0">
+        <div className="floating-orb w-32 h-32 top-16 right-1/4" style={{ animationDelay: '2s' }}></div>
+        <div className="floating-orb w-24 h-24 bottom-1/4 right-10" style={{ animationDelay: '4s' }}></div>
+        <div className="floating-orb w-28 h-28 top-1/2 left-8" style={{ animationDelay: '6s' }}></div>
+      </div>
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <motion.h2
@@ -38,7 +44,7 @@ export default function TechStack() {
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.3 + categoryIndex * 0.1 }}
-              className="bg-background border border-border rounded-xl p-6"
+              className="glass-card rounded-xl p-6"
             >
               <div className="flex items-center mb-6">
                 <div className={`p-3 rounded-lg mr-4 ${category.color}`}>
