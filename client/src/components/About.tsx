@@ -141,7 +141,7 @@ export default function About() {
           
           <div className="relative">
             {/* Timeline line */}
-            <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full timeline-line"></div>
+            <div className="absolute md:left-1/2 md:transform md:-translate-x-1/2 left-4 w-1 h-full timeline-line"></div>
             
             {/* Timeline items */}
             <div className="space-y-12">
@@ -151,13 +151,13 @@ export default function About() {
                   initial={{ opacity: 0, x: item.side === 'left' ? -50 : 50 }}
                   animate={isInView ? { opacity: 1, x: 0 } : {}}
                   transition={{ duration: 0.6, delay: 0.7 + index * 0.2 }}
-                  className="flex items-center justify-between"
+                  className="flex flex-col md:flex-row items-start justify-between"
                 >
                   {item.side === 'left' ? (
                     <>
-                      <div className="w-5/12 text-right pr-8">
+                      <div className="md:w-5/12 w-full md:text-right md:pr-8 pr-0 mb-8 md:mb-0">
                         <div className="glass-card p-6 rounded-lg relative">
-                          <div className={`absolute top-6 -right-3 w-6 h-6 ${item.color === 'blue' ? 'bg-primary' : 'bg-destructive'} rounded-full border-4 border-background`}></div>
+                          <div className={`absolute top-6 md:-right-3 -left-3 w-6 h-6 ${item.color === 'blue' ? 'bg-primary' : 'bg-destructive'} rounded-full border-4 border-background`}></div>
                           <h4 className={`font-bold text-lg ${item.color === 'blue' ? 'text-primary' : 'text-destructive'}`}>
                             {item.title}
                           </h4>
@@ -166,16 +166,16 @@ export default function About() {
                           <p className="text-sm text-muted-foreground mt-2">{item.description}</p>
                         </div>
                       </div>
-                      <div className="w-2/12"></div>
-                      <div className="w-5/12"></div>
+                      <div className="hidden md:block md:w-2/12"></div>
+                      <div className="hidden md:block md:w-5/12"></div>
                     </>
                   ) : (
                     <>
-                      <div className="w-5/12"></div>
-                      <div className="w-2/12"></div>
-                      <div className="w-5/12 pl-8">
+                      <div className="hidden md:block md:w-5/12"></div>
+                      <div className="hidden md:block md:w-2/12"></div>
+                      <div className="md:w-5/12 w-full md:pl-8 pl-0">
                         <div className="glass-card p-6 rounded-lg relative">
-                          <div className={`absolute top-6 -left-3 w-6 h-6 ${item.color === 'blue' ? 'bg-primary' : 'bg-destructive'} rounded-full border-4 border-background`}></div>
+                          <div className={`absolute top-6 md:-left-3 -left-3 w-6 h-6 ${item.color === 'blue' ? 'bg-primary' : 'bg-destructive'} rounded-full border-4 border-background`}></div>
                           <h4 className={`font-bold text-lg ${item.color === 'blue' ? 'text-primary' : 'text-destructive'}`}>
                             {item.title}
                           </h4>
