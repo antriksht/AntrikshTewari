@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
@@ -10,8 +10,15 @@ import { ArrowRight } from "lucide-react";
 
 export default function Projects() {
   const [activeFilter, setActiveFilter] = useState("all");
+  const [currentPage, setCurrentPage] = useState(0);
+  const itemsPerPage = 6;
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
+
+  // Reset to first page whenever the active filter changes
+  useEffect(() => {
+    setCurrentPage(0);
+  }, [activeFilter]);
 
   const filters = [
     { id: "all", label: "All" },
@@ -23,9 +30,23 @@ export default function Projects() {
     { id: "cro", label: "CRO" }
   ];
 
-  const filteredProjects = activeFilter === "all" 
-    ? projects 
+  const filteredProjects = activeFilter === "all"
+    ? projects
     : projects.filter(project => project.tags.includes(activeFilter));
+
+  const totalPages = Math.ceil(filteredProjects.length / itemsPerPage);
+  const paginatedProjects = filteredProjects.slice(
+    currentPage * itemsPerPage,
+    currentPage * itemsPerPage + itemsPerPage
+  );
+
+  const handlePrev = () => {
+    setCurrentPage((p) => Math.max(0, p - 1));
+  };
+
+  const handleNext = () => {
+    setCurrentPage((p) => Math.min(totalPages - 1, p + 1));
+  };
 
   return (
     <section id="projects" className="py-20 bg-background relative overflow-hidden" ref={ref}>
@@ -104,7 +125,7 @@ export default function Projects() {
         
         {/* Projects Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filteredProjects.map((project, index) => (
+          {paginatedProjects.map((project, index) => (
             <motion.div
               key={project.id}
               initial={{ opacity: 0, y: 20 }}
@@ -147,6 +168,18 @@ export default function Projects() {
             </motion.div>
           ))}
         </div>
+
+        {/* Pagination Controls */}
+        {totalPages > 1 && (
+          <div className="flex justify-center mt-8 gap-4">
+            <Button variant="outline" size="sm" onClick={handlePrev} disabled={currentPage === 0}>
+              Previous
+            </Button>
+            <Button variant="outline" size="sm" onClick={handleNext} disabled={currentPage >= totalPages - 1}>
+              Next
+            </Button>
+          </div>
+        )}
       </div>
     </section>
   );
