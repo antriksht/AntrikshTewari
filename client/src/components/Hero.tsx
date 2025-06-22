@@ -19,21 +19,19 @@ export default function Hero() {
 
   return (
     <section className="min-h-screen gradient-bg flex items-center justify-center relative overflow-hidden pt-20">
-      {/* Animated particles background */}
-      <div className="absolute inset-0 z-10">
+      {/* Animated particles */}
+      <div className="absolute inset-0">
         {[...Array(11)].map((_, i) => {
-          const randomTop = Math.random() * 80 + 10; // 10% to 90%
-          const randomLeft = Math.random() * 80 + 10; // 10% to 90%
-          const randomOpacity = Math.random() * 0.3 + 0.6; // 0.6 to 0.9
-          const randomDuration = Math.random() * 6 + 3; // 3s to 9s
-          const randomDelay = Math.random() * 10; // 0s to 10s
-          const randomYMovement = Math.random() * 20 + 5; // 5px to 25px
-          const randomXMovement = Math.random() * 10 + 2; // 2px to 12px
+          const randomTop = Math.random() * 80 + 10;
+          const randomLeft = Math.random() * 80 + 10;
           const randomSize = Math.random() * 3 + 2; // 2px to 5px
+          const randomDuration = Math.random() * 4 + 3; // 3s to 7s
+          const randomDelay = Math.random() * 6; // 0s to 6s
+          const randomOpacity = Math.random() * 0.3 + 0.6; // 0.6 to 0.9
           
           return (
-            <motion.div
-              key={`hero-particle-${i}`}
+            <div
+              key={`about-particle-${i}`}
               className="section-particle"
               style={{
                 top: `${randomTop}%`,
@@ -41,17 +39,8 @@ export default function Hero() {
                 width: `${randomSize}px`,
                 height: `${randomSize}px`,
                 opacity: randomOpacity,
-              }}
-              animate={{
-                y: [-randomYMovement, randomYMovement, -randomYMovement],
-                x: [-randomXMovement, randomXMovement, -randomXMovement],
-                scale: [1, 1.2, 0.8, 1],
-              }}
-              transition={{
-                duration: randomDuration,
-                repeat: Infinity,
-                delay: randomDelay,
-                ease: "easeInOut",
+                animationDuration: `${randomDuration}s`,
+                animationDelay: `${randomDelay}s`,
               }}
             />
           );

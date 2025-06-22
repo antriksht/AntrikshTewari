@@ -8,7 +8,7 @@ export default function Footer() {
           <div className="text-2xl font-bold mb-4">
             <span className="text-primary">Antriksh</span> Tewari
           </div>
-          <p className="text-muted-foreground mb-6">Marketing Meets Machine Learning</p>
+          <p className="text-muted-foreground mb-6">Marketing Meets Growth</p>
           <div className="flex justify-center space-x-6 mb-8">
             <a 
               href="mailto:antriksh.tewari89@gmail.com" 
