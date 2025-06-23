@@ -46,7 +46,7 @@ export default function About() {
       </div>
       {/* Animated particles */}
       <div className="absolute inset-0">
-        {[...Array(8)].map((_, i) => {
+        {[...Array(12)].map((_, i) => {
           const randomTop = Math.random() * 80 + 10;
           const randomLeft = Math.random() * 80 + 10;
           const randomSize = Math.random() * 3 + 2; // 2px to 5px
