@@ -194,5 +194,121 @@ export const projects: Project[] = [
     duration: "9 months",
     teamSize: "5 specialists",
     impact: "High - Scalable automation breakthrough"
+  },
+  {
+    id: "7",
+    slug: "funnel-performance-insights",
+    title: "Funnel Performance Insights",
+    company: "Acme Corp",
+    description: "Analyzed the marketing funnel to uncover drop-offs and improve conversions.",
+    result: "+12% Conversions",
+    tags: ["dashboards", "cro"],
+    technologies: ["Power BI", "SQL", "Python", "Google Analytics"],
+    color: "blue",
+    icon: TrendingUp,
+    challenge: "Acme Corp lacked clarity on which funnel steps lost the most users.",
+    solution: "Built a dashboard highlighting conversion rates and automated alerts for anomalies.",
+    implementation: [
+      "Collected event data across the funnel",
+      "Modeled user journeys in SQL",
+      "Created automated anomaly detection scripts",
+      "Developed self-serve reporting in Power BI"
+    ],
+    results: [
+      { metric: "+12%", description: "Overall conversion improvement" },
+      { metric: "+20%", description: "Checkout completion rise" },
+      { metric: "-18%", description: "Drop-off at signup step" },
+      { metric: "4", description: "Departments using insights" }
+    ],
+    duration: "3 months",
+    teamSize: "2 specialists",
+    impact: "Medium - Improved funnel visibility"
+  },
+  {
+    id: "8",
+    slug: "social-automation-suite",
+    title: "Social Automation Suite",
+    company: "BetaTech",
+    description: "Automated social campaign reporting and budget allocation.",
+    result: "+25% Efficiency",
+    tags: ["automation", "ppc"],
+    technologies: ["Node.js", "APIs", "Automation", "Facebook Ads"],
+    color: "red",
+    icon: Zap,
+    challenge: "Manual reporting across platforms consumed significant time.",
+    solution: "Created scripts to fetch metrics, allocate budgets and send notifications.",
+    implementation: [
+      "Connected marketing APIs for data pulls",
+      "Automated daily performance snapshots",
+      "Implemented budget pacing algorithm",
+      "Set up notification system for anomalies"
+    ],
+    results: [
+      { metric: "+25%", description: "Time savings for campaign managers" },
+      { metric: "+15%", description: "Budget utilization improvement" },
+      { metric: "24/7", description: "Real-time monitoring" },
+      { metric: "5", description: "Channels integrated" }
+    ],
+    duration: "4 months",
+    teamSize: "3 specialists",
+    impact: "Medium - Scalable social management"
+  },
+  {
+    id: "9",
+    slug: "seo-bulk-optimizer",
+    title: "SEO Bulk Optimizer",
+    company: "Omega Ventures",
+    description: "Created automated SEO auditing tool for a site with over 10k pages.",
+    result: "+40% Organic Traffic",
+    tags: ["seo", "automation"],
+    technologies: ["Python", "Cloud Functions", "Screaming Frog", "Pandas"],
+    color: "blue",
+    icon: Bot,
+    challenge: "Manually auditing thousands of pages was unsustainable.",
+    solution: "Built a crawler and automated fixer scripts to address common SEO issues.",
+    implementation: [
+      "Developed scalable crawling pipeline",
+      "Generated prioritized SEO issue reports",
+      "Automated fixes for meta tags and redirects",
+      "Integrated changes with CI/CD pipeline"
+    ],
+    results: [
+      { metric: "+40%", description: "Organic traffic increase" },
+      { metric: "+50%", description: "Pages indexed" },
+      { metric: "10k+", description: "Pages audited" },
+      { metric: "<1h", description: "Audit turnaround time" }
+    ],
+    duration: "6 months",
+    teamSize: "4 specialists",
+    impact: "High - Large site optimization"
+  },
+  {
+    id: "10",
+    slug: "predictive-churn-model",
+    title: "Predictive Churn Model",
+    company: "TelecomCo",
+    description: "Developed ML model to predict customer churn and trigger retention actions.",
+    result: "-15% Churn",
+    tags: ["ml", "dashboards"],
+    technologies: ["Python", "Scikit-Learn", "Tableau", "ML"],
+    color: "red",
+    icon: Brain,
+    challenge: "High customer churn rates with limited proactive mitigation.",
+    solution: "Implemented predictive modeling with dashboards for the retention team.",
+    implementation: [
+      "Collected historical account and usage data",
+      "Trained classification models for churn propensity",
+      "Created trigger-based email workflows",
+      "Built Tableau dashboard for churn drivers"
+    ],
+    results: [
+      { metric: "-15%", description: "Churn reduction" },
+      { metric: "+22%", description: "Retention offer acceptance" },
+      { metric: "95%", description: "Model accuracy" },
+      { metric: "1M+", description: "Customers scored" }
+    ],
+    duration: "7 months",
+    teamSize: "5 specialists",
+    impact: "High - Revenue preservation"
   }
 ];
