@@ -35,9 +35,14 @@ export default defineConfig({
       output: {
         manualChunks: (id) => {
           if (id.includes('node_modules')) {
-            if (id.includes('react') || id.includes('react-dom')) {
+            // Keep React and React-DOM together
+            if (id.includes('react-dom')) {
               return 'react-vendor';
             }
+            if (id.includes('react') && !id.includes('react-dom')) {
+              return 'react-vendor';
+            }
+            // Separate other libraries
             if (id.includes('framer-motion')) {
               return 'ui';
             }
@@ -53,6 +58,7 @@ export default defineConfig({
             if (id.includes('three') || id.includes('ogl') || id.includes('postprocessing')) {
               return '3d-libs';
             }
+            // Everything else goes to vendor
             return 'vendor';
           }
         },
