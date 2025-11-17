@@ -1,15 +1,18 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ChevronDown } from "lucide-react";
-import Hyperspeed from "./Hyperspeed";
+import { lazy, Suspense } from "react";
+
+const Hyperspeed = lazy(() => import("./Hyperspeed"));
 
 export default function Hero() {
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
+      // Use getBoundingClientRect to avoid forced reflow
+      const rect = element.getBoundingClientRect();
       const headerOffset = 80;
-      const elementPosition = element.offsetTop;
-      const offsetPosition = elementPosition - headerOffset;
+      const offsetPosition = window.pageYOffset + rect.top - headerOffset;
 
       window.scrollTo({
         top: offsetPosition,
@@ -23,7 +26,8 @@ export default function Hero() {
       {/* Hyperspeed background */}
       <div className="absolute inset-0 z-0 w-full h-full overflow-hidden pointer-events-auto">
         <div className="w-full h-full translate-x-1/4">
-          <Hyperspeed
+          <Suspense fallback={<div className="w-full h-full bg-background" />}>
+            <Hyperspeed
             effectOptions={{
               onSpeedUp: () => {},
               onSlowDown: () => {},
@@ -62,6 +66,7 @@ export default function Hero() {
               }
             }}
           />
+          </Suspense>
         </div>
       </div>
 
