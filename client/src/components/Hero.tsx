@@ -96,7 +96,7 @@ export default function Hero() {
               transition={{ duration: 0.6, delay: 1 }}
               className="text-sm text-muted-foreground/60 mb-12 italic"
             >
-              💡 Click and hold on the highway to speed up — feel the acceleration
+              Click and hold on the highway to speed up, feel the acceleration
             </motion.p>
 
             <div className="flex flex-col sm:flex-row gap-4">
