@@ -3,6 +3,7 @@ import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { CheckCircle } from "lucide-react";
 import AnimatedCounter from "@/components/AnimatedCounter";
+import Particles from "./Particles";
 
 export default function Impact() {
   const ref = useRef(null);
@@ -74,14 +75,27 @@ export default function Impact() {
 
   return (
     <section id="impact" className="py-20 bg-background relative overflow-hidden" ref={ref}>
+      {/* Particles background */}
+      <div className="absolute inset-0 z-0 pointer-events-auto">
+        <Particles
+          particleColors={['#10b981', '#f59e0b']}
+          particleCount={100}
+          particleSpread={10}
+          speed={0.2}
+          particleBaseSize={100}
+          moveParticlesOnHover={true}
+          alphaParticles={false}
+          disableRotation={false}
+        />
+      </div>
       {/* Floating orbs background */}
-      <div className="absolute inset-0">
+      <div className="absolute inset-0 pointer-events-none">
         <div className="floating-orb w-40 h-40 top-20 left-12" style={{ animationDelay: '1.5s' }}></div>
         <div className="floating-orb w-24 h-24 top-2/3 right-16" style={{ animationDelay: '3.5s' }}></div>
         <div className="floating-orb w-32 h-32 bottom-10 right-1/3" style={{ animationDelay: '5.5s' }}></div>
       </div>
       {/* Animated particles */}
-      <div className="absolute inset-0">
+      <div className="absolute inset-0 pointer-events-none">
         {[...Array(8)].map((_, i) => {
           const randomTop = Math.random() * 80 + 10;
           const randomLeft = Math.random() * 80 + 10;
@@ -107,7 +121,8 @@ export default function Impact() {
           );
         })}
       </div>
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-4 relative z-10 pointer-events-none">
+        <div className="pointer-events-auto">
         <div className="text-center mb-16">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
@@ -193,6 +208,7 @@ export default function Impact() {
               ))}
             </div>
           </div>
+        </div>
         </div>
       </div>
     </section>

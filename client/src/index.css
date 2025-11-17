@@ -236,3 +236,10 @@
 .animate-pulse-slow {
   animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
+
+/* Hyperspeed canvas styling */
+#lights canvas {
+  width: 100% !important;
+  height: 100% !important;
+  display: block;
+}

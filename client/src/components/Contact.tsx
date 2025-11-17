@@ -4,6 +4,7 @@ import { useRef } from "react";
 import { Mail, Phone, MapPin, Download, Linkedin, MessageCircle, Calendar, Users, Target } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import Particles from "./Particles";
 
 export default function Contact() {
   const ref = useRef(null);
@@ -41,14 +42,27 @@ export default function Contact() {
 
   return (
     <section id="contact" className="py-20 bg-card relative overflow-hidden" ref={ref}>
+      {/* Particles background */}
+      <div className="absolute inset-0 z-0 pointer-events-auto">
+        <Particles
+          particleColors={['#3b82f6', '#06b6d4']}
+          particleCount={100}
+          particleSpread={10}
+          speed={0.2}
+          particleBaseSize={100}
+          moveParticlesOnHover={true}
+          alphaParticles={false}
+          disableRotation={false}
+        />
+      </div>
       {/* Floating orbs background */}
-      <div className="absolute inset-0">
+      <div className="absolute inset-0 pointer-events-none">
         <div className="floating-orb w-36 h-36 top-1/4 left-10" style={{ animationDelay: '0.5s' }}></div>
         <div className="floating-orb w-28 h-28 bottom-1/4 right-12" style={{ animationDelay: '2.5s' }}></div>
         <div className="floating-orb w-20 h-20 top-16 right-1/3" style={{ animationDelay: '4.5s' }}></div>
       </div>
       {/* Animated particles */}
-      <div className="absolute inset-0">
+      <div className="absolute inset-0 pointer-events-none">
         {[...Array(6)].map((_, i) => {
           const randomTop = Math.random() * 80 + 10;
           const randomLeft = Math.random() * 80 + 10;
@@ -74,7 +88,8 @@ export default function Contact() {
           );
         })}
       </div>
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-4 relative z-10 pointer-events-none">
+        <div className="pointer-events-auto">
         <div className="text-center mb-16">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
@@ -166,7 +181,7 @@ export default function Contact() {
                   initial={{ opacity: 0, x: 20 }}
                   animate={isInView ? { opacity: 1, x: 0 } : {}}
                   transition={{ duration: 0.6, delay: 0.4 }}
-                  className="flex items-center justify-between p-6 bg-gradient-to-r from-primary to-primary/80 rounded-lg hover:from-primary/90 hover:to-primary/70 transition-all glow-blue group"
+                  className="flex items-center justify-between p-6 bg-gradient-to-r from-primary to-primary/80 rounded-lg hover:from-primary/90 hover:to-primary/70 transition-all glow-blue group backdrop-blur-sm"
                 >
                   <div className="flex items-center space-x-4">
                     <Download className="w-8 h-8 text-primary-foreground" />
@@ -226,6 +241,7 @@ export default function Contact() {
               </motion.div>
             </div>
           </div>
+        </div>
         </div>
       </div>
     </section>

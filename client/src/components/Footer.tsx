@@ -34,7 +34,7 @@ export default function Footer() {
             </a>
           </div>
           <p className="text-muted-foreground text-sm">
-            © 2024 Antriksh Tewari. Transforming businesses through data-driven marketing excellence.
+            © {new Date().getFullYear()} Antriksh Tewari. Transforming businesses through data-driven marketing excellence.
           </p>
         </div>
       </div>

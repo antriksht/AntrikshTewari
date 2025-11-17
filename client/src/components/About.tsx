@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
 import AnimatedCounter from "@/components/AnimatedCounter";
+import Particles from "./Particles";
 
 export default function About() {
   const ref = useRef(null);
@@ -38,14 +39,27 @@ export default function About() {
 
   return (
     <section id="about" className="py-20 bg-card relative overflow-hidden">
+      {/* Particles background */}
+      <div className="absolute inset-0 z-0 pointer-events-auto">
+        <Particles
+          particleColors={['#3b82f6', '#ef4444']}
+          particleCount={100}
+          particleSpread={10}
+          speed={0.2}
+          particleBaseSize={100}
+          moveParticlesOnHover={true}
+          alphaParticles={false}
+          disableRotation={false}
+        />
+      </div>
       {/* Floating orbs background */}
-      <div className="absolute inset-0">
+      <div className="absolute inset-0 pointer-events-none">
         <div className="floating-orb w-32 h-32 top-10 left-10" style={{ animationDelay: '0s' }}></div>
         <div className="floating-orb w-24 h-24 top-1/3 right-20" style={{ animationDelay: '2s' }}></div>
         <div className="floating-orb w-40 h-40 bottom-20 left-1/4" style={{ animationDelay: '4s' }}></div>
       </div>
       {/* Animated particles */}
-      <div className="absolute inset-0">
+      <div className="absolute inset-0 pointer-events-none">
         {[...Array(12)].map((_, i) => {
           const randomTop = Math.random() * 80 + 10;
           const randomLeft = Math.random() * 80 + 10;
@@ -71,7 +85,8 @@ export default function About() {
           );
         })}
       </div>
-      <div className="container mx-auto px-4 relative z-10">
+      <div className="container mx-auto px-4 relative z-10 pointer-events-none">
+        <div className="pointer-events-auto">
         <div className="text-center mb-16">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
@@ -216,6 +231,7 @@ export default function About() {
             ))}
           </div>
         </motion.div>
+        </div>
       </div>
     </section>
   );

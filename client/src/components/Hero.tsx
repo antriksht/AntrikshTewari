@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ChevronDown } from "lucide-react";
+import Hyperspeed from "./Hyperspeed";
 
 export default function Hero() {
   const scrollToSection = (sectionId: string) => {
@@ -18,78 +19,118 @@ export default function Hero() {
   };
 
   return (
-    <section className="min-h-screen gradient-bg flex items-center justify-center relative overflow-hidden pt-20">
-      {/* Animated particles */}
-      <div className="absolute inset-0">
-        {[...Array(11)].map((_, i) => {
-          const randomTop = Math.random() * 80 + 10;
-          const randomLeft = Math.random() * 80 + 10;
-          const randomSize = Math.random() * 3 + 2; // 2px to 5px
-          const randomDuration = Math.random() * 4 + 3; // 3s to 7s
-          const randomDelay = Math.random() * 6; // 0s to 6s
-          const randomOpacity = Math.random() * 0.3 + 0.6; // 0.6 to 0.9
-          
-          return (
-            <div
-              key={`about-particle-${i}`}
-              className="section-particle"
-              style={{
-                top: `${randomTop}%`,
-                left: `${randomLeft}%`,
-                width: `${randomSize}px`,
-                height: `${randomSize}px`,
-                opacity: randomOpacity,
-                animationDuration: `${randomDuration}s`,
-                animationDelay: `${randomDelay}s`,
-              }}
-            />
-          );
-        })}
+    <section className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20">
+      {/* Hyperspeed background */}
+      <div className="absolute inset-0 z-0 w-full h-full overflow-hidden pointer-events-auto">
+        <div className="w-full h-full translate-x-1/4">
+          <Hyperspeed
+            effectOptions={{
+              onSpeedUp: () => {},
+              onSlowDown: () => {},
+              distortion: 'LongRaceDistortion',
+              length: 400,
+              roadWidth: 9,
+              islandWidth: 2,
+              lanesPerRoad: 3,
+              fov: 90,
+              fovSpeedUp: 150,
+              speedUp: 2,
+              carLightsFade: 0.4,
+              totalSideLightSticks: 50,
+              lightPairsPerRoadWay: 50,
+              shoulderLinesWidthPercentage: 0.05,
+              brokenLinesWidthPercentage: 0.1,
+              brokenLinesLengthPercentage: 0.5,
+              lightStickWidth: [0.12, 0.5],
+              lightStickHeight: [1.3, 1.7],
+              movingAwaySpeed: [60, 80],
+              movingCloserSpeed: [-120, -160],
+              carLightsLength: [400 * 0.05, 400 * 0.15],
+              carLightsRadius: [0.05, 0.14],
+              carWidthPercentage: [0.3, 0.5],
+              carShiftX: [-0.2, 0.2],
+              carFloorSeparation: [0.05, 1],
+              colors: {
+                roadColor: 0x080808,
+                islandColor: 0x0a0a0a,
+                background: 0x000000,
+                shoulderLines: 0x131318,
+                brokenLines: 0x131318,
+                leftCars: [0xdc5b20, 0xdca320, 0xdc2020],
+                rightCars: [0x334bf7, 0xe5e6ed, 0xbfc6f3],
+                sticks: 0xc5e8eb
+              }
+            }}
+          />
+        </div>
       </div>
 
-      <div className="container mx-auto px-4 text-center relative z-20">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-        >
-          <h1 className="text-5xl md:text-7xl font-bold mb-6">
-            <span className="text-primary">Strategic</span> Marketing
-            <br />
-            <span className="text-destructive">Meets</span>
-          </h1>
+      <div className="container mx-auto px-4 relative z-20 pointer-events-none">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center min-h-[80vh]">
+          {/* Left side - Text content */}
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6 }}
+            className="text-left pointer-events-auto"
+          >
+            <h1 className="text-5xl md:text-7xl font-bold mb-6">
+              <span className="text-primary">Driving</span> Growth
+              <br />
+              <span className="text-destructive">At Full Speed</span>
+            </h1>
 
-          <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">
-            Growth Architect | CRO Strategist | Analytics Leader
-          </p>
+            <p className="text-xl md:text-2xl mb-8">
+              Growth Architect | CRO Strategist | Analytics Leader
+            </p>
 
-          <p className="text-lg text-muted-foreground mb-12 max-w-2xl mx-auto">
-            Driving enterprise growth through data-driven marketing strategies,
-            advanced analytics, and AI-powered automation across 20+ leading
-            brands.
-          </p>
+            <p className="text-lg text-muted-foreground mb-8">
+              Accelerating enterprise growth through data-driven marketing strategies,
+              advanced analytics, and AI-powered automation across 20+ leading
+              brands.
+            </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Button
-              onClick={() => scrollToSection("projects")}
-              className="glow-blue px-8 py-4 text-lg font-semibold hover:scale-105 transition-transform"
+            <motion.p
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.6, delay: 1 }}
+              className="text-sm text-muted-foreground/60 mb-12 italic"
             >
-              View My Projects
-            </Button>
-            <Button
-              variant="outline"
-              onClick={() => scrollToSection("contact")}
-              className="px-8 py-4 text-lg font-semibold border-primary/50 text-primary hover:bg-primary/10 transition-colors"
-            >
-              Get In Touch
-            </Button>
-          </div>
-        </motion.div>
+              💡 Click and hold on the highway to speed up — feel the acceleration
+            </motion.p>
+
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Button
+                onClick={() => scrollToSection("projects")}
+                className="glow-blue px-8 py-4 text-lg font-semibold hover:scale-105 transition-transform"
+              >
+                View My Projects
+              </Button>
+              <Button
+                variant="outline"
+                onClick={() => scrollToSection("contact")}
+                className="px-8 py-4 text-lg font-semibold border-primary/50 text-primary hover:bg-primary/10 transition-colors"
+              >
+                Get In Touch
+              </Button>
+            </div>
+          </motion.div>
+
+          {/* Right side - Animation showcase */}
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="hidden lg:block"
+          >
+            {/* Empty div - animation is in background */}
+          </motion.div>
+        </div>
       </div>
 
       {/* Scroll indicator */}
       <motion.div
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
+        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 pointer-events-auto"
         animate={{ y: [0, 10, 0] }}
         transition={{ duration: 2, repeat: Infinity }}
       >

@@ -7,6 +7,7 @@ import { projects } from "@/data/projects";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ArrowRight } from "lucide-react";
+import Particles from "./Particles";
 
 export default function Projects() {
   const [activeFilter, setActiveFilter] = useState("all");
@@ -29,14 +30,27 @@ export default function Projects() {
 
   return (
     <section id="projects" className="py-20 bg-background relative overflow-hidden" ref={ref}>
+      {/* Particles background */}
+      <div className="absolute inset-0 z-0 pointer-events-auto">
+        <Particles
+          particleColors={['#ef4444', '#3b82f6']}
+          particleCount={100}
+          particleSpread={10}
+          speed={0.2}
+          particleBaseSize={100}
+          moveParticlesOnHover={true}
+          alphaParticles={false}
+          disableRotation={false}
+        />
+      </div>
       {/* Floating orbs background */}
-      <div className="absolute inset-0">
+      <div className="absolute inset-0 pointer-events-none">
         <div className="floating-orb w-28 h-28 top-1/4 right-10" style={{ animationDelay: '1s' }}></div>
         <div className="floating-orb w-36 h-36 bottom-1/3 left-16" style={{ animationDelay: '3s' }}></div>
         <div className="floating-orb w-20 h-20 top-10 left-1/3" style={{ animationDelay: '5s' }}></div>
       </div>
       {/* Animated particles */}
-      <div className="absolute inset-0 z-10">
+      <div className="absolute inset-0 z-10 pointer-events-none">
         {[...Array(9)].map((_, i) => {
           const randomTop = Math.random() * 80 + 10;
           const randomLeft = Math.random() * 80 + 10;
@@ -62,7 +76,8 @@ export default function Projects() {
           );
         })}
       </div>
-      <div className="container mx-auto px-4 relative z-20">
+      <div className="container mx-auto px-4 relative z-20 pointer-events-none">
+        <div className="pointer-events-auto">
         <div className="text-center mb-16">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
@@ -146,6 +161,7 @@ export default function Projects() {
               </Link>
             </motion.div>
           ))}
+        </div>
         </div>
       </div>
     </section>

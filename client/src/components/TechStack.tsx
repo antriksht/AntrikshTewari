@@ -3,6 +3,7 @@ import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { techStack } from "@/data/techStack";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
+import Particles from "./Particles";
 
 export default function TechStack() {
   const ref = useRef(null);
@@ -10,14 +11,27 @@ export default function TechStack() {
 
   return (
     <section id="tech-stack" className="py-20 bg-card relative overflow-hidden" ref={ref}>
+      {/* Particles background */}
+      <div className="absolute inset-0 z-0 pointer-events-auto">
+        <Particles
+          particleColors={['#3b82f6', '#8b5cf6']}
+          particleCount={100}
+          particleSpread={10}
+          speed={0.2}
+          particleBaseSize={100}
+          moveParticlesOnHover={true}
+          alphaParticles={false}
+          disableRotation={false}
+        />
+      </div>
       {/* Floating orbs background */}
-      <div className="absolute inset-0">
+      <div className="absolute inset-0 pointer-events-none">
         <div className="floating-orb w-32 h-32 top-16 right-1/4" style={{ animationDelay: '2s' }}></div>
         <div className="floating-orb w-24 h-24 bottom-1/4 right-10" style={{ animationDelay: '4s' }}></div>
         <div className="floating-orb w-28 h-28 top-1/2 left-8" style={{ animationDelay: '6s' }}></div>
       </div>
       {/* Animated particles */}
-      <div className="absolute inset-0">
+      <div className="absolute inset-0 pointer-events-none">
         {[...Array(7)].map((_, i) => {
           const randomTop = Math.random() * 80 + 10;
           const randomLeft = Math.random() * 80 + 10;
@@ -43,7 +57,8 @@ export default function TechStack() {
           );
         })}
       </div>
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-4 relative z-10 pointer-events-none">
+        <div className="pointer-events-auto">
         <div className="text-center mb-16">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
@@ -106,6 +121,7 @@ export default function TechStack() {
               </div>
             </motion.div>
           ))}
+        </div>
         </div>
       </div>
     </section>
