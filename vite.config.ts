@@ -31,46 +31,7 @@ export default defineConfig({
     outDir: path.resolve(__dirname, "dist/public"),
     emptyOutDir: true,
     cssCodeSplit: true,
-    rollupOptions: {
-      output: {
-        manualChunks: (id) => {
-          if (id.includes('node_modules')) {
-            // Keep React and React-DOM together
-            if (id.includes('react-dom')) {
-              return 'react-vendor';
-            }
-            if (id.includes('react') && !id.includes('react-dom')) {
-              return 'react-vendor';
-            }
-            // Separate other libraries
-            if (id.includes('framer-motion')) {
-              return 'ui';
-            }
-            if (id.includes('wouter')) {
-              return 'router';
-            }
-            if (id.includes('lucide-react')) {
-              return 'icons';
-            }
-            if (id.includes('@radix-ui')) {
-              return 'radix-ui';
-            }
-            if (id.includes('three') || id.includes('ogl') || id.includes('postprocessing')) {
-              return '3d-libs';
-            }
-            // Everything else goes to vendor
-            return 'vendor';
-          }
-        },
-      },
-    },
-    minify: 'terser',
-    terserOptions: {
-      compress: {
-        drop_console: true,
-        drop_debugger: true,
-      },
-    },
+    minify: 'esbuild', // Use esbuild instead of terser for faster builds
   },
   server: {
     fs: {
