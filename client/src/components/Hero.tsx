@@ -1,11 +1,24 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ChevronDown } from "lucide-react";
-import { lazy, Suspense } from "react";
+import { lazy, Suspense, useState, useEffect } from "react";
 
 const Hyperspeed = lazy(() => import("./Hyperspeed"));
 
 export default function Hero() {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    // Check if device is mobile (screen width < 768px)
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
@@ -23,11 +36,12 @@ export default function Hero() {
 
   return (
     <section className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20">
-      {/* Hyperspeed background */}
-      <div className="absolute inset-0 z-0 w-full h-full overflow-hidden pointer-events-auto">
-        <div className="w-full h-full translate-x-1/4">
-          <Suspense fallback={<div className="w-full h-full bg-background" />}>
-            <Hyperspeed
+      {/* Hyperspeed background - hidden on mobile for better performance */}
+      {!isMobile && (
+        <div className="absolute inset-0 z-0 w-full h-full overflow-hidden pointer-events-auto">
+          <div className="w-full h-full translate-x-1/4">
+            <Suspense fallback={<div className="w-full h-full bg-background" />}>
+              <Hyperspeed
             effectOptions={{
               onSpeedUp: () => {},
               onSlowDown: () => {},
@@ -65,10 +79,11 @@ export default function Hero() {
                 sticks: 0xc5e8eb
               }
             }}
-          />
-          </Suspense>
+            />
+            </Suspense>
+          </div>
         </div>
-      </div>
+      )}
 
       <div className="container mx-auto px-4 relative z-20 pointer-events-none">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center min-h-[80vh]">
@@ -95,14 +110,16 @@ export default function Hero() {
               brands.
             </p>
 
-            <motion.p
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.6, delay: 1 }}
-              className="text-sm text-muted-foreground/60 mb-12 italic"
-            >
-              Click and hold on the highway to speed up, feel the acceleration
-            </motion.p>
+            {!isMobile && (
+              <motion.p
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.6, delay: 1 }}
+                className="text-sm text-muted-foreground/60 mb-12 italic"
+              >
+                Click and hold on the highway to speed up, feel the acceleration
+              </motion.p>
+            )}
 
             <div className="flex flex-col sm:flex-row gap-4">
               <Button
